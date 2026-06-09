@@ -1,16 +1,6 @@
 import { Star, Heart } from 'lucide-react'
 import Image from 'next/image'
-
-interface Property {
-  id: number
-  title: string
-  type: string
-  location: string
-  price: number
-  rating: number
-  image: string
-  isSuperhost: boolean
-}
+import { Property } from '@/data/mockProperties'
 
 export default function PropertyCard({ property }: { property: Property }) {
   return (
