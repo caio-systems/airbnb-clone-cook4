@@ -1,5 +1,5 @@
 import PropertyCard from './PropertyCard'
-import { Property } from '@/data/mockProperties'
+import { Property } from '@/types/property'
 
 interface PropertyGridProps {
   properties: Property[]
