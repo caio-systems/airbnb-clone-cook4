@@ -1,6 +1,7 @@
 import { Search } from 'lucide-react'
-import PropertyCard from '@/components/PropertyCard'
-import { properties } from '@/lib/mockData'
+import PropertyGrid from '@/components/PropertyGrid'
+import Footer from '@/components/Footer'
+import { mockProperties } from '@/data/mockProperties'
 
 export default function Home() {
   return (
@@ -42,66 +43,10 @@ export default function Home() {
       </section>
 
       {/* Properties Grid */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="mb-8">
-          <h2 className="text-3xl font-semibold mb-2">Explore nearby stays</h2>
-          <p className="text-gray-600">Discover amazing places to stay</p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {properties.map((property) => (
-            <PropertyCard key={property.id} property={property} />
-          ))}
-        </div>
-      </section>
+      <PropertyGrid properties={mockProperties} />
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 mt-16">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-semibold mb-4">About</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:underline">How Airbnb works</a></li>
-                <li><a href="#" className="hover:underline">Newsroom</a></li>
-                <li><a href="#" className="hover:underline">Careers</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Community</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:underline">Diversity & Belonging</a></li>
-                <li><a href="#" className="hover:underline">Accessibility</a></li>
-                <li><a href="#" className="hover:underline">Airbnb Associates</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Host</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:underline">Host your home</a></li>
-                <li><a href="#" className="hover:underline">Host an experience</a></li>
-                <li><a href="#" className="hover:underline">Responsible hosting</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:underline">Help Center</a></li>
-                <li><a href="#" className="hover:underline">Cancellation options</a></li>
-                <li><a href="#" className="hover:underline">Contact us</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-            <p>© 2026 Airbnb Clone. All rights reserved.</p>
-            <div className="flex gap-4 mt-4 md:mt-0">
-              <a href="#" className="hover:underline">Privacy</a>
-              <a href="#" className="hover:underline">Terms</a>
-              <a href="#" className="hover:underline">Sitemap</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
